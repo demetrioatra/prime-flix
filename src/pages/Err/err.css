@@ -1,0 +1,23 @@
+.info {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info h1 {
+    font-size: 80px;
+}
+
+.info a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #000;
+}
+
+.info a:hover {
+    background-color: gray;
+}
