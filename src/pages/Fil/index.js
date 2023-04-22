@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import api from "../../api"
-import './filme.css'
+import './fil.css'
+import { toast } from "react-toastify"
 
 function Filme() {
     const nav = useNavigate()
@@ -38,12 +39,13 @@ function Filme() {
         const hasFilme = filmesSalvos.some(even)
 
         if (hasFilme === true) {
-            alert("Este filme já foi salvo...")
+            toast.warn('Este filme já está salvo...')
             return
         }
 
         filmesSalvos.push(filme)
-        localStorage.setItem('@primeflix', JSON.stringify(filmesSalvos))        
+        localStorage.setItem('@primeflix', JSON.stringify(filmesSalvos))    
+        toast.success('Filme salvo com sucesso!')    
     }
 
     if (carregando) {

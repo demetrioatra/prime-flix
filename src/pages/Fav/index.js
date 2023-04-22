@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import './fav.css'
+import { toast } from "react-toastify"
 
 function Fav() {
     const [filmes, setFilmes] = useState([])
@@ -18,6 +19,7 @@ function Fav() {
 
         setFilmes(filtro)
         localStorage.setItem('@primeflix', JSON.stringify(filtro))
+        toast.success('Filme excluído com sucesso!')
     }
 
     return(
