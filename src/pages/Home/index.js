@@ -35,16 +35,14 @@ function Home() {
 
     return (
         <div>
-            <div className='titulo'>
-                <h2>Filmes em cartaz</h2>
-            </div>
+            <h2 className='titulo'>Filmes em cartaz</h2>
             <div className='lista-filmes'>
                 {filmes.map((f) => {
                     return(
                         <article key={f.id}>
                             <strong>{f.title}</strong>
                             <img src={`https://image.tmdb.org/t/p/original/${f.poster_path}`} alt={f.title} />
-                            <Link to={`/filme/${f.id}`}>Acessar</Link>
+                            <Link to={`/fil/${f.id}`}>Acessar</Link>
                         </article>
                     )
                 })}

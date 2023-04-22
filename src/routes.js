@@ -4,8 +4,9 @@ import {
     BrowserRouter
 } from 'react-router-dom'
 import Err from './pages/Err'
+import Fav from './pages/Fav'
 import Home from './pages/Home'
-import Filme from './pages/Filme'
+import Fil from './pages/Fil'
 import Header from './components/Header'
 
 function RoutesApp() {
@@ -14,7 +15,8 @@ function RoutesApp() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/filme/:id" element={<Filme />} />
+                <Route path="/fil/:id" element={<Fil />} />
+                <Route path="/fav" element={<Fav />} />
                 <Route path="*" element={<Err />} />
             </Routes>
         </BrowserRouter>

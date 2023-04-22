@@ -1,0 +1,49 @@
+.lisfil h2 {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.lisfil ul {
+    width: 460px;
+    list-style: none;
+}
+
+.lisfil ul li {
+    padding: 10px;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+    border: 1.5px solid #000;
+}
+
+.lisfil div a {
+    margin-right: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1.5px solid #000;
+    color: #fff;
+    background-color: #000;
+}
+
+.lisfil div a:hover{
+    background-color: gray;
+}
+
+.lisfil div button {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #000;
+}
+
+.lisfil div button:hover {
+    background-color: gray;
+}
