@@ -1,0 +1,39 @@
+.filme-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 18%;
+}
+
+.filme-info h2 {
+    margin: 2.5% auto;
+}
+
+.filme-info img {
+    max-width: 100%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.filme-info h3 {
+    margin-top: 2%;
+}
+
+.filme-info span {
+    margin: 10px 0;
+    
+}
+
+.botoes button {
+    width: 80px;
+    cursor: pointer;
+    margin-top: 1%;
+    padding: 8px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    color: #fff;
+    background-color: #000;
+}
+
+.botoes button:hover {
+    background-color: gray;
+}

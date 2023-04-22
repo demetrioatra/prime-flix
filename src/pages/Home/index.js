@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import api from '../../services/api'
+import api from '../../api'
 import './home.css'
 
 function Home() {
@@ -9,7 +9,6 @@ function Home() {
     const [carregando, setCarregando] = useState(true)
 
     useEffect(() => {
-
         async function loadFilmes() {
             const response = await api.get('movie/now_playing', {
                 params: {
@@ -20,7 +19,7 @@ function Home() {
             })
 
             setFilmes(response.data.results.slice(0,10))
-            setTimeout(setCarregando(false), 2000)
+            setCarregando(false)
         }
         
         loadFilmes()
