@@ -5,8 +5,8 @@ import './home.css'
 
 function Home() {
 
-    const [filmes, setFilmes] = useState([])
-    const [carregando, setCarregando] = useState(true)
+    const [ filmes, setFilmes ] = useState([])
+    const [ carregando, setCarregando ] = useState(true)
 
     useEffect(() => {
         async function loadFilmes() {

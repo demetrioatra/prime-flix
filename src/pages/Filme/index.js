@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import api from "../../api"
 import './filme.css'
 
 function Filme() {
-    const {id} = useParams()
-    const [filme, setFilme] = useState({})
-    const [carregando, setCarregando] = useState(true)
+    const nav = useNavigate()
+    const { id } = useParams()
+    const [ filme, setFilme ] = useState({})
+    const [ carregando, setCarregando ] = useState(true)
     
     useEffect(() => {
         async function carregaFilme() {
@@ -22,12 +23,29 @@ function Filme() {
             })
             .catch(() => {
                 console.log('filme nao encontrado')
+                nav('/', {replace:  true})
             })
         }
-        
+
         carregaFilme()
-    }, [])
+    }, [nav, id])
       
+    function salvar() {
+        const lista = localStorage.getItem('@primeflix')
+        let filmesSalvos = JSON.parse(lista) || []
+
+        const even = (sFilme) => sFilme.id === filme.id
+        const hasFilme = filmesSalvos.some(even)
+
+        if (hasFilme === true) {
+            alert("Este filme já foi salvo...")
+            return
+        }
+
+        filmesSalvos.push(filme)
+        localStorage.setItem('@primeflix', JSON.stringify(filmesSalvos))        
+    }
+
     if (carregando) {
         return (
             <div className='carregando'>
@@ -44,8 +62,8 @@ function Filme() {
             <span>{filme.overview}</span>
             <strong>Avaliação: {filme.vote_average} / 10</strong>
             <div className="botoes">
-                <button>Salvar</button>
-                <button><a>Trailer</a></button>
+                <button onClick={salvar}>Salvar</button>
+                <button><a href={`https://youtube.com/results/?search_query=${filme.title} trailer`} target="blank" rel="external">Trailer</a></button>
             </div>
         </div>
     )
